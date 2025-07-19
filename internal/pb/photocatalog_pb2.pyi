@@ -1,7 +1,8 @@
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Mapping as _Mapping
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -37,3 +38,13 @@ class PhotoResponse(_message.Message):
     timestamp: _timestamp_pb2.Timestamp
     content: str
     def __init__(self, id: _Optional[str] = ..., description: _Optional[str] = ..., timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., content: _Optional[str] = ...) -> None: ...
+
+class UploadStatusResponse(_message.Message):
+    __slots__ = ("success", "message", "uploaded_ids")
+    SUCCESS_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    UPLOADED_IDS_FIELD_NUMBER: _ClassVar[int]
+    success: bool
+    message: str
+    uploaded_ids: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, success: bool = ..., message: _Optional[str] = ..., uploaded_ids: _Optional[_Iterable[str]] = ...) -> None: ...
