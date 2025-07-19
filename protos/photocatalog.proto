@@ -6,7 +6,7 @@ service PhotoCatalogService {
     rpc Photo(IdRequest) returns (PhotoResponse) {}
     rpc AddPhoto(PhotoRequest) returns (PhotoResponse) {}
     rpc RandomPhotos(CountRequest) returns (stream PhotoResponse) {}
-    rpc AddPhotos(stream PhotoRequest) returns (UploadStatusResponse ) {}
+    rpc AddPhotos(stream PhotoRequest) returns (UploadStatusResponse) {}
 }
 
 message IdRequest {
